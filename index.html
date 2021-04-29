@@ -1,0 +1,1992 @@
+<!-- START COPY FROM HERE  -->
+<style>
+  .strike {
+    text-decoration: line-through;
+    color: #babec5;
+  }
+
+  .mobile-hide {
+    display: none;
+  }
+
+  /* INTUIT CHECKMARK */
+  .intuit-checkmark {
+    width: 18px;
+    height: auto;
+    display: none;
+  }
+
+  /* INTUIT CTA */
+  .intuit-cta {
+    border-radius: 3px;
+    color: #fff;
+    padding: 6px 16px;
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #2ca01c;
+    transition: all 0.3s ease-out;
+  }
+
+  .intuit-cta:hover,
+  .intuit-cta:focus {
+    background: #108000;
+  }
+
+  /* SWITCH ON/OFF */
+  .switch-on {
+    background: #c9007a;
+    width: 62px;
+    height: 30px;
+    display: block;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+  }
+
+  .switch-on span {
+    color: #fff;
+    font-size: 12px;
+  }
+
+  .switch-on__text {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center;
+    display: block;
+  }
+
+  .switch-on__text--on {
+    padding: 2px 0 2px 3px;
+  }
+
+  .switch-on__text--off {
+    padding: 2px 3px 2px 0;
+  }
+
+  .switch-on::after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    top: 2px;
+    transition: all 0.2s ease-out;
+  }
+
+  .switch-on.switch-on--flick::after {
+    transform: translateX(32px);
+  }
+
+  /* PRODUCT PRICE */
+  .product-price__text {
+    margin-bottom: 5px;
+  }
+  .product-price__number-wrapper {
+    height: 43px;
+    overflow: hidden;
+  }
+  .product-price__number {
+    position: relative;
+    transition: all 0.2s ease-out;
+  }
+
+  .product-price__number-dollars {
+    font-size: 36px;
+    font-family: "Geogrotesque", "Avenir Next forINTUIT", Arial, sans-serif;
+    color: #393a3d;
+  }
+
+  .product-price__number-dollars-old {
+    color: #babec5;
+    font-size: 18px;
+    font-family: "Geogrotesque", "Avenir Next forINTUIT", Arial, sans-serif;
+    vertical-align: top;
+    text-decoration: line-through;
+  }
+
+  .product-price__number-cents {
+    font-size: 20px;
+    top: -11px;
+    position: relative;
+    color: #393a3d;
+    font-family: "Geogrotesque", "Avenir Next forINTUIT", Arial, sans-serif;
+  }
+
+  .product-price__number-period {
+    font-size: 14px;
+    color: #393a3d;
+  }
+
+  .product-price_offer-call {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .product-price_offer-call-number {
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .product-price--change .product-price__number--alt,
+  .product-price--change .product-price__number {
+    transform: translateY(-43px);
+  }
+
+  /* CHART */
+  .custom-pricing-chart {
+    width: 1080px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  .custom-pricing-chart--fixed {
+    padding-top: 310px;
+  }
+
+  /* HEADER */
+  .custom-pricing-chart__header {
+    display: flex;
+    width: 100%;
+    padding-bottom: 100px;
+    position: relative;
+    background: #eceef1;
+  }
+
+  .custom-pricing-chart__header--fixed {
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    max-width: 1132px;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 8;
+  }
+
+  .custom-pricing-chart__header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .custom-pricing-chart__header-title {
+    font-size: 19px;
+    margin: 0 0 25px 0;
+  }
+
+  .custom-pricing-chart__header-payroll {
+    display: flex;
+    align-items: center;
+  }
+
+  .custom-pricing-chart__header-payroll-title {
+    color: #c9007a;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 20px 0 0;
+  }
+
+  .custom-pricing-chart__header-info {
+    flex: 1 1 auto;
+    display: none;
+  }
+
+  .custom-pricing-chart__header-product {
+    width: 100%;
+    flex: 1 0 100%;
+    padding: 14px 15px 27px;
+    background: #f4f5f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    border-top: solid 7px #56b620;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 210px;
+  }
+
+  .custom-pricing-chart__header-product-name {
+    font-family: "Geogrotesque", "Avenir Next forINTUIT", Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .custom-pricing-chart__header-product-price {
+    margin-bottom: 16px;
+  }
+
+  /* SECTION */
+  .custom-pricing-chart__section {
+    border-bottom: 3px solid #babec5;
+    overflow: hidden;
+    transition: all 0.2s ease-out;
+  }
+
+  .custom-pricing-chart__section--payroll {
+    border-bottom-width: 0;
+  }
+
+  .custom-pricing-chart__section--payroll .custom-pricing-chart__section-row {
+    max-height: 0;
+    border-bottom-width: 0;
+  }
+
+  .custom-pricing-chart__section-row {
+    border-bottom: 1px solid #e2e2e2;
+    display: flex;
+    align-content: center;
+    height: 100%;
+    max-height: 65px;
+    transition: all 0.2s ease-out;
+  }
+
+  .custom-pricing-chart__section-row--head
+    .custom-pricing-chart__section-feature,
+  .custom-pricing-chart__section-row--head .custom-pricing-chart__section-info {
+    font-weight: bold;
+    font-size: 19px;
+    align-items: flex-start;
+  }
+
+  .custom-pricing-chart__section-info {
+    padding: 20px;
+    flex: 1 1 auto;
+    font-size: 15px;
+    display: none;
+  }
+
+  .custom-pricing-chart__section-info sup {
+    vertical-align: super;
+    font-size: smaller;
+  }
+
+  .custom-pricing-chart__section-feature {
+    padding: 18px;
+    background: #fff;
+    max-width: 100%;
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 14px;
+  }
+
+  .custom-pricing-chart__section-feature small {
+    font-size: 10px;
+  }
+
+  .custom-pricing-chart__header--shift,
+  .custom-pricing-chart__section-row--shift {
+    transform: translateX(-100%);
+  }
+
+  .custom-pricing-chart__header--fixed.custom-pricing-chart__header--shift {
+    transform: translateX(-150%);
+  }
+
+  .chart-selector {
+    display: flex;
+    width: 100%;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background: #fff;
+    margin-bottom: 35px;
+  }
+
+  .chart-selector__option {
+    flex: 1 0 50%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #6b6c72;
+  }
+
+  .chart-selector__option-text {
+    height: 55px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid transparent;
+  }
+
+  .chart-selector__option--active .chart-selector__option-text {
+    border-bottom-color: #56b620;
+    font-weight: 500;
+  }
+
+  /* MOBILE PAYROLL SWITCH */
+  .custom-price-chart__mobile-header {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    border-bottom: 3px solid #babec5;
+  }
+
+  .custom-price-chart__mobile-header-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+  }
+
+  .custom-pricing-chart__mobile-header-payroll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .custom-pricing-chart__mobile-header-payroll-title {
+    margin: 0 20px 0 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #c9007a;
+  }
+
+  /* SELECT ARROW */
+  .selector-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #babec5;
+  }
+
+  .selector-arrow--right {
+    right: 10px;
+    bottom: 150px;
+  }
+
+  .selector-arrow--left {
+    left: 10px;
+    bottom: 150px;
+  }
+
+  .selector-arrow--active {
+    display: none;
+  }
+
+  .selector-arrow__right {
+    max-width: 16px;
+    width: 100%;
+    height: auto;
+  }
+
+  .selector-arrow__left {
+    max-width: 16px;
+    width: 100%;
+    height: auto;
+    transform: rotate(180deg);
+  }
+
+  .custom-pricing-chart__header--shift .custom-price-chart__mobile-header {
+    transform: translateX(100%);
+  }
+
+  .custom-pricing-chart__header--shift .selector-arrow--right {
+    left: calc(200% - 50px);
+  }
+
+  .custom-pricing-chart__header--shift .selector-arrow--left {
+    left: calc(100% + 10px);
+  }
+
+  @media (min-width: 768px) {
+    .custom-pricing-chart {
+      width: 100%;
+    }
+    .hero-container .hero .text-heading {
+      width: 420px;
+    }
+  }
+
+  @media only screen and (max-width: 490px) {
+    .custom-pricing-chart {
+      width: 100%;
+    }
+    .hero-container .hero .text-heading {
+      margin: 60px 0;
+    }
+    .custom-pricing-chart__section-row sup {
+      vertical-align: super;
+      font-size: smaller;
+    }
+    .custom-pricing-chart__header-product {
+      padding: 14px 15px 15px;
+      height: 170px;
+    }
+    .custom-price-chart__mobile-header {
+      height: 80px;
+    }
+    .custom-pricing-chart__header {
+      padding-bottom: 80px;
+    }
+    .custom-price-chart__mobile-header-title {
+      margin-bottom: 5px;
+    }
+    .custom-pricing-chart__header-product-price {
+      margin-bottom: 5px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .desktop-hide {
+      display: none;
+    }
+
+    .mobile-hide {
+      display: block;
+    }
+
+    .custom-pricing-chart--fixed {
+      padding-top: 210px;
+    }
+
+    .custom-pricing-chart__header {
+      border-bottom: 3px solid #babec5;
+    }
+
+    .custom-pricing-chart__section-info {
+      display: block;
+    }
+
+    .custom-pricing-chart__header {
+      padding-bottom: 0;
+    }
+
+    .custom-pricing-chart__header-info {
+      display: flex;
+    }
+
+    .custom-pricing-chart__header-product {
+      max-width: 267px;
+      flex: 1 1 100%;
+      padding: 14px 15px 27px;
+      background: #ffffff;
+      margin-left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      border-top: solid 7px #56b620;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+
+    .custom-pricing-chart__section-feature {
+      padding: 18px;
+      background: #fff;
+      max-width: 267px;
+      flex: 1 1 100%;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .intuit-checkmark {
+      display: inline-block;
+    }
+
+    .chart-selector {
+      display: none;
+    }
+
+    .custom-price-chart__mobile-header {
+      display: none;
+    }
+
+    .custom-pricing-chart__section-row--shift,
+    .custom-pricing-chart__header--shift {
+      transform: translateX(0%);
+    }
+
+    .custom-pricing-chart__header-product {
+      background: #ffffff;
+    }
+
+    .selector-arrow {
+      display: none;
+    }
+
+    .custom-pricing-chart__header--fixed.custom-pricing-chart__header--shift {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<section class="custom-pricing-chart" id="custom-pricing-chart">
+  <div class="custom-pricing-chart__selector chart-selector">
+    <a
+      href="javascript:void(0);"
+      data-product="pro"
+      class="chart-selector__option chart-selector__option--active"
+    >
+      <span
+        class="chart-selector__option-text chart-selector__option-text"
+        data-product="pro"
+        >Pro</span
+      >
+    </a>
+
+    <a
+      href="javascript:void(0);"
+      data-product="premier"
+      class="chart-selector__option"
+    >
+      <span class="chart-selector__option-text" data-product="premier"
+        >Premier</span
+      >
+    </a>
+  </div>
+
+  <header
+    id="custom-pricing-chart__header"
+    class="custom-pricing-chart__header"
+  >
+    <div class="custom-pricing-chart__header-info">
+      <h3 class="custom-pricing-chart__header-title">
+        Need to pay employees?
+      </h3>
+
+      <div class="custom-pricing-chart__header-payroll">
+        <p class="custom-pricing-chart__header-payroll-title">
+          Add Payroll?
+        </p>
+
+        <a
+          class="custom-pricing-chart__header-payroll-switch switch-on"
+          href="javascript:void(0);"
+        >
+          <span class="switch-on__text switch-on__text--on">ON</span>
+          <span class="switch-on__text switch-on__text--off">OFF</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="custom-pricing-chart__header-product">
+      <p class="custom-pricing-chart__header-product-name">
+        Desktop Pro 2021
+      </p>
+
+      <div class="custom-pricing-chart__header-product-price product-price">
+        <div class="product-price__text">Starting at</div>
+        <div class="product-price__number-wrapper">
+          <div class="product-price__number">
+            <!-- <span class="product-price__number-dollars-old">$31</span> -->
+            <span class="product-price__number-dollars">$37</span
+            ><sup class="product-price__number-cents">00</sup
+            ><span class="product-price__number-period">/mo</span>
+          </div>
+
+          <div class="product-price__number product-price__number--alt">
+            <!-- <span class="product-price__number-dollars-old">$71</span> -->
+            <span class="product-price__number-dollars">$83</span
+            ><sup class="product-price__number-cents">00</sup
+            ><span class="product-price__number-period">/mo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- <p class="product-price_offer-call">Call <a href="tel:1-855-731-1057" class="product-price_offer-call-number">1-855-731-1057</a> <br>to purchase</p> -->
+
+      <a
+        data-wa-link="qb-en-ca-desktop-pro-pricing-subscribe"
+        href="https://quickbooks.intuit.ca/accounting-software/quickbooks-download/quickbooks-pro-accounting-tools/#pricing"
+        class="custom-pricing-chart__header-product-cta intuit-cta"
+        >Subscribe now</a
+      >
+    </div>
+
+    <div class="custom-pricing-chart__header-product">
+      <p class="custom-pricing-chart__header-product-name">
+        Desktop Premier 2021
+      </p>
+
+      <div class="custom-pricing-chart__header-product-price product-price">
+        <div class="product-price__text">Starting at</div>
+        <div class="product-price__number-wrapper">
+          <div class="product-price__number">
+            <!-- <span class="product-price__number-dollars-old">$47</span> -->
+            <span class="product-price__number-dollars">$58</span
+            ><sup class="product-price__number-cents">00</sup
+            ><span class="product-price__number-period">/mo</span>
+          </div>
+
+          <div class="product-price__number product-price__number--alt">
+            <!-- <span class="product-price__number-dollars-old">$90</span> -->
+            <span class="product-price__number-dollars">$104</span
+            ><sup class="product-price__number-cents">00</sup
+            ><span class="product-price__number-period">/mo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- <p class="product-price_offer-call">Call <a href="tel:1-855-731-1057" class="product-price_offer-call-number">1-855-731-1057</a> <br>to purchase</p> -->
+
+      <a
+        data-wa-link="qb-en-ca-desktop-premier-pricing-subscribe"
+        href="https://quickbooks.intuit.ca/accounting-software/quickbooks-download/quickbooks-premier-best-accounting-software/#pricing"
+        class="custom-pricing-chart__header-product-cta intuit-cta"
+        >Subscribe now</a
+      >
+    </div>
+
+    <div class="custom-price-chart__mobile-header">
+      <p class="custom-price-chart__mobile-header-title">
+        Need to pay employees?
+      </p>
+      <div class="custom-pricing-chart__mobile-header-payroll">
+        <p class="custom-pricing-chart__mobile-header-payroll-title">
+          Add Payroll?
+        </p>
+
+        <a
+          class="custom-pricing-chart__mobile-header-payroll-switch switch-on"
+          href="javascript:void(0);"
+        >
+          <span class="switch-on__text switch-on__text--on">ON</span>
+          <span class="switch-on__text switch-on__text--off">OFF</span>
+        </a>
+      </div>
+    </div>
+
+    <a
+      href="javascript:void(0);"
+      data-product="premier"
+      class="selector-arrow selector-arrow--right"
+    >
+      <svg
+        class="selector-arrow__left"
+        viewBox="0 0 16 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs>
+          <path id="c" d="M3.4.3L0 3.5l8.6 8.6L0 20.6l3.6 3.3 11.7-11.7z" />
+        </defs>
+        <g transform="rotate(-180 7.9 12)" fill="none" fill-rule="evenodd">
+          <mask id="d" fill="#fff">
+            <use xlink:href="#a" />
+          </mask>
+          <path fill="#BABEC5" mask="url(#d)" d="M-2.3 25.5h20V-1.2h-20z" />
+        </g>
+      </svg>
+    </a>
+
+    <a
+      href="javascript:void(0);"
+      data-product="pro"
+      class="selector-arrow selector-arrow--active selector-arrow--left"
+    >
+      <svg
+        class="selector-arrow__right"
+        viewBox="0 0 16 24"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <defs>
+          <path id="a" d="M3.4.3L0 3.5l8.6 8.6L0 20.6l3.6 3.3 11.7-11.7z" />
+        </defs>
+        <g transform="rotate(-180 7.9 12)" fill="none" fill-rule="evenodd">
+          <mask id="b" fill="#fff">
+            <use xlink:href="#a" />
+          </mask>
+          <path fill="#BABEC5" mask="url(#b)" d="M-2.3 25.5h20V-1.2h-20z" />
+        </g>
+      </svg>
+    </a>
+  </header>
+
+  <!-- START OF SECTION -->
+  <section
+    id="custom-pricing-chart__section--payroll"
+    class="custom-pricing-chart__section custom-pricing-chart__section--payroll"
+  >
+    <div
+      class="custom-pricing-chart__section-row custom-pricing-chart__section-row--head"
+    >
+      <div class="custom-pricing-chart__section-info">
+        TOOLS TO EFFECTIVELY MANAGE YOUR PAYROLL
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          TOOLS TO EFFECTIVELY MANAGE YOUR PAYROLL
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          TOOLS TO EFFECTIVELY MANAGE YOUR PAYROLL
+        </span>
+      </div>
+    </div>
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Pay employees in 3 easy steps <sup>1</sup>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Pay employees in 3 easy steps <sup>1</sup>
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Pay employees in 3 easy steps <sup>1</sup>
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Payroll Centre: Manage multiple tasks in one place
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Payroll Centre: Manage multiple tasks in one place
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Payroll Centre: Manage multiple tasks in one place
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Auto-calculate payroll taxes and deductions <sup>2</sup>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Auto-calculate payroll taxes and deductions <sup>2</sup>
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Auto-calculate payroll taxes and deductions <sup>2</sup>
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Up-to-date tax tables <sup>3</sup>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide"> Up-to-date tax tables <sup>3</sup> </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide"> Up-to-date tax tables <sup>3</sup> </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Generate T4s/RL-1s or ROE at no extra cost
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Generate T4s/RL-1s or ROE at no extra cost
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Generate T4s/RL-1s or ROE at no extra cost
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Automatically file and EFILE T4s/RL-1s or ROEs <sup>4</sup>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Automatically file and EFILE T4s/RL-1s or ROEs <sup>4</sup>
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Automatically file and EFILE T4s/RL-1s or ROEs <sup>4</sup>
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+  </section>
+  <!-- END OF SECTION -->
+
+  <!-- START OF SECTION -->
+  <section class="custom-pricing-chart__section">
+    <div
+      class="custom-pricing-chart__section-row custom-pricing-chart__section-row--head"
+    >
+      <div class="custom-pricing-chart__section-info">
+        EASY TO GET STARTED
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          EASY TO GET STARTED
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          EASY TO GET STARTED
+        </span>
+      </div>
+    </div>
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Get started fast with guided setup
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Get started fast with guided setup
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Get started fast with guided setup
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Import data from Excel and more <sup>1</sup>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <div class="desktop-hide">
+          Import data from Excel and more <sup>1</sup>
+        </div>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <div class="desktop-hide">
+          Import data from Excel and more <sup>1</sup>
+        </div>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+  </section>
+  <!-- END OF SECTION -->
+
+  <!-- START OF SECTION -->
+  <section class="custom-pricing-chart__section">
+    <div
+      class="custom-pricing-chart__section-row custom-pricing-chart__section-row--head"
+    >
+      <div class="custom-pricing-chart__section-info">
+        SAVE TIME ON EVERYDAY TASKS
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          SAVE TIME ON EVERYDAY TASKS
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          SAVE TIME ON EVERYDAY TASKS
+        </span>
+      </div>
+    </div>
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Create professional estimates and invoices
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Create professional estimates and invoices
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Create professional estimates and invoices
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Track sales, sales taxes and expenses
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Track sales, sales taxes and expenses
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Track sales, sales taxes and expenses
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        EFILE GST and HST <sup>2</sup>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide"> EFILE GST and HST <sup>2</sup> </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide"> EFILE GST and HST <sup>2</sup> </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Be ready at tax time with easy, reliable reports
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Be ready at tax time with easy, reliable reports
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Be ready at tax time with easy, reliable reports
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Organize your business in one place with Customer, Vendor and Employee
+        Centres
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Organize your business in one place with Customer, Vendor and Employee
+          Centres
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Organize your business in one place with Customer, Vendor and Employee
+          Centres
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Download your bank transactions <sup>3</sup>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Download your bank transactions <sup>3</sup>
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Download your bank transactions <sup>3</sup>
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Track inventory, set re-order points, create purchase orders
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Track inventory, set re-order points, create purchase orders
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Track inventory, set re-order points, create purchase orders
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Work in more than one currency
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Work in more than one currency
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+        <span class="desktop-hide">
+          Work in more than one currency
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Allows more than one user at a time <sup>4</sup>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="mobile-hide">
+          1 included up to 3<br />
+          <small>(each sold separately)</small>
+        </span>
+
+        <span class="desktop-hide">
+          Allows more than one user at a time <sup>4</sup>
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="mobile-hide">
+          2 included up to 4<br />
+          <small>(each sold separately)</small>
+        </span>
+
+        <span class="desktop-hide">
+          Allows more than one user at a time <sup>4</sup>
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+  </section>
+  <!-- END OF SECTION -->
+
+  <!-- START OF SECTION -->
+  <section class="custom-pricing-chart__section">
+    <div
+      class="custom-pricing-chart__section-row custom-pricing-chart__section-row--head"
+    >
+      <div class="custom-pricing-chart__section-info">
+        GET BUSINESS INFORMATION YOU NEED
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          GET BUSINESS INFORMATION YOU NEED
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          GET BUSINESS INFORMATION YOU NEED
+        </span>
+      </div>
+    </div>
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Get financial, sales and tax reports in one click
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="mobile-hide">
+          100+
+        </span>
+
+        <span class="desktop-hide">
+          Get financial, sales and tax reports in one click
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="mobile-hide">
+          135+
+        </span>
+
+        <span class="desktop-hide">
+          Get financial, sales and tax reports in one click
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        View the full picture of your business performance at a glance with
+        Insights Home Page
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+
+        <span class="desktop-hide">
+          View the full picture of your business performance at a glance with
+          Insights Home Page
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+
+        <span class="desktop-hide">
+          View the full picture of your business performance at a glance with
+          Insights Home Page
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+  </section>
+  <!-- END OF SECTION -->
+
+  <!-- START OF SECTION -->
+  <section class="custom-pricing-chart__section">
+    <div
+      class="custom-pricing-chart__section-row custom-pricing-chart__section-row--head"
+    >
+      <div class="custom-pricing-chart__section-info">
+        TOOLS TAILORED TO YOUR INDUSTRY
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          TOOLS TAILORED TO YOUR INDUSTRY
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide">
+          TOOLS TAILORED TO YOUR INDUSTRY
+        </span>
+      </div>
+    </div>
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Uncover business insights with industry-specific reports
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide strike">
+          Uncover business insights with industry-specific reports
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+
+        <span class="desktop-hide">
+          Uncover business insights with industry-specific reports
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Create sales orders and track backorders
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide strike">
+          Create sales orders and track backorders
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+
+        <span class="desktop-hide">
+          Create sales orders and track backorders
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Track costs for assembled products and inventory
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide strike">
+          Track costs for assembled products and inventory
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+
+        <span class="desktop-hide">
+          Track costs for assembled products and inventory
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+
+    <!-- START OF ROW -->
+    <div class="custom-pricing-chart__section-row">
+      <div class="custom-pricing-chart__section-info">
+        Set product/service prices by customer type
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <span class="desktop-hide strike">
+          Set product/service prices by customer type
+        </span>
+      </div>
+
+      <div class="custom-pricing-chart__section-feature">
+        <svg
+          class="intuit-checkmark"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 123 105.8"
+        >
+          <path
+            d="M2.8 70.5a7.1 7.1 0 0 1-2.7-4.8 6.5 6.5 0 0 1 1.4-5.1L8.8 51a7 7 0 0 1 4.7-2.7 6.6 6.6 0 0 1 5.2 1.4l29 22.2 53-69.2a7.2 7.2 0 0 1 10-1.3l9.5 7.3a7 7 0 0 1 2.8 4.8 6.7 6.7 0 0 1-1.4 5.2L64.2 93.5 57 103a7.2 7.2 0 0 1-10 1.4z"
+            fill="#34ab49"
+          />
+        </svg>
+
+        <span class="desktop-hide">
+          Set product/service prices by customer type
+        </span>
+      </div>
+    </div>
+    <!-- END OF ROW -->
+  </section>
+  <!-- END OF SECTION -->
+</section>
+
+<script>
+  const customChart = {
+    _settings: {
+      switchClass: "switch-on",
+      switchAltClass: "switch-on--flick",
+      payrollSectionID: "custom-pricing-chart__section--payroll",
+      payrollSectionCLass: "custom-pricing-chart__section--payroll",
+      productPriceClass: "product-price",
+      productPriceAltClass: "product-price--change",
+      priceChartHeaderID: "custom-pricing-chart__header",
+      priceChartSectionsClass: "custom-pricing-chart__section-row",
+      priceChartHeaderAltClass: "custom-pricing-chart__header--shift",
+      priceChartSectionsAltClass: "custom-pricing-chart__section-row--shift",
+      chartSelectorOptionsClass: "chart-selector__option",
+      chartSelectorOptionActiveClass: "chart-selector__option--active",
+      arrowSelectorClass: "selector-arrow",
+      arrowSelectorActiveClass: "selector-arrow--active",
+      productHeaderID: "custom-pricing-chart__header",
+      productHeaderClassFixed: "custom-pricing-chart__header--fixed",
+      containerID: "custom-pricing-chart",
+      containerClassFixed: "custom-pricing-chart--fixed"
+    },
+
+    settings: {},
+
+    store: {
+      switchState: false,
+      productType: "pro"
+    },
+
+    getParentByAttribute: function (el, attribute) {
+      do {
+        if (el.hasAttribute(attribute)) {
+          return el;
+        } else {
+          el = el.parentNode;
+        }
+      } while (el && el.parentNode);
+    },
+
+    flickSwitch: function () {
+      let self = this,
+        payrollSwitches = document.getElementsByClassName(
+          self.settings.switchClass
+        );
+
+      if (self.store.switchState) {
+        for (var i = 0; i < payrollSwitches.length; i++) {
+          payrollSwitches[i].classList.remove(self.settings.switchAltClass);
+        }
+      } else {
+        for (var i = 0; i < payrollSwitches.length; i++) {
+          payrollSwitches[i].classList.add(self.settings.switchAltClass);
+        }
+      }
+    },
+
+    showPayroll: function () {
+      let self = this,
+        payrollSection = document.getElementById(
+          self.settings.payrollSectionID
+        );
+
+      if (self.store.switchState) {
+        payrollSection.classList.add(self.settings.payrollSectionCLass);
+      } else {
+        payrollSection.classList.remove(self.settings.payrollSectionCLass);
+      }
+    },
+
+    changePrice: function () {
+      let self = this,
+        productPrice = document.getElementsByClassName(
+          self.settings.productPriceClass
+        );
+
+      if (self.store.switchState) {
+        for (let i = 0; i < productPrice.length; i++) {
+          productPrice[i].classList.remove(self.settings.productPriceAltClass);
+        }
+      } else {
+        for (let i = 0; i < productPrice.length; i++) {
+          productPrice[i].classList.add(self.settings.productPriceAltClass);
+        }
+      }
+    },
+
+    slideSections: function () {
+      let self = this,
+        priceHeader = document.getElementById(self.settings.priceChartHeaderID),
+        priceSections = document.getElementsByClassName(
+          self.settings.priceChartSectionsClass
+        );
+
+      if (self.store.productType == "pro") {
+        priceHeader.classList.remove(self.settings.priceChartHeaderAltClass);
+        for (var i = 0; i < priceSections.length; i++) {
+          priceSections[i].classList.remove(
+            self.settings.priceChartSectionsAltClass
+          );
+        }
+      } else if (self.store.productType == "premier") {
+        priceHeader.classList.add(self.settings.priceChartHeaderAltClass);
+        for (var i = 0; i < priceSections.length; i++) {
+          priceSections[i].classList.add(
+            self.settings.priceChartSectionsAltClass
+          );
+        }
+      }
+    },
+
+    chartSelector: function (target) {
+      let self = this,
+        chartSelectors = document.getElementsByClassName(
+          self.settings.chartSelectorOptionsClass
+        ),
+        mainDiv = self.getParentByAttribute(target, "data-product");
+
+      self.store.productType = mainDiv.getAttribute("data-product");
+
+      for (var i = 0; i < chartSelectors.length; i++) {
+        let productType = chartSelectors[i].getAttribute("data-product");
+        if (productType == self.store.productType) {
+          chartSelectors[i].classList.add(
+            self.settings.chartSelectorOptionActiveClass
+          );
+        } else {
+          chartSelectors[i].classList.remove(
+            self.settings.chartSelectorOptionActiveClass
+          );
+        }
+      }
+    },
+
+    arrowSelection: function (target) {
+      let self = this,
+        arrowSelectors = document.getElementsByClassName(
+          self.settings.arrowSelectorClass
+        ),
+        mainDiv = self.getParentByAttribute(target, "data-product");
+
+      self.store.productType = mainDiv.getAttribute("data-product");
+
+      for (var i = 0; i < arrowSelectors.length; i++) {
+        let productType = arrowSelectors[i].getAttribute("data-product");
+
+        if (productType == self.store.productType) {
+          arrowSelectors[i].classList.add(
+            self.settings.arrowSelectorActiveClass
+          );
+        } else {
+          arrowSelectors[i].classList.remove(
+            self.settings.arrowSelectorActiveClass
+          );
+        }
+      }
+    },
+
+    stickyHeader: function () {
+      let self = this,
+        header = document.getElementById(self.settings.productHeaderID),
+        customChart = document.getElementById(self.settings.containerID);
+      (stuck = false), (stickyPoint = getDistance());
+
+      function getDistance() {
+        var topDistance = header.offsetTop;
+        return topDistance;
+      }
+
+      let stickToTop = function () {
+        let distance = getDistance() - window.pageYOffset + 320,
+          offset = window.pageYOffset;
+        var customPricingChart = document.querySelector(".custom-pricing-chart")
+          .offsetHeight;
+
+        window.addEventListener(
+          "resize",
+          function () {
+            stickyPoint = getDistance();
+          },
+          false
+        );
+
+        if (distance <= 0 && !stuck) {
+          header.classList.add(self.settings.productHeaderClassFixed);
+          customChart.classList.add(self.settings.containerClassFixed);
+          stuck = true;
+        } else if (stuck && offset <= stickyPoint + 300) {
+          header.classList.remove(self.settings.productHeaderClassFixed);
+          customChart.classList.remove(self.settings.containerClassFixed);
+          stuck = false;
+        } else if (offset >= customPricingChart + 300) {
+          document
+            .getElementById("custom-pricing-chart__header")
+            .classList.remove("custom-pricing-chart__header--fixed");
+        }
+      };
+
+      window.addEventListener(
+        "scroll",
+        function () {
+          stickToTop();
+        },
+        false
+      );
+    },
+
+    events: function () {
+      let self = this,
+        priceSwitches = document.getElementsByClassName(
+          self.settings.switchClass
+        ),
+        productSelectors = document.getElementsByClassName(
+          self.settings.chartSelectorOptionsClass
+        ),
+        arrowSelectors = document.getElementsByClassName(
+          self.settings.arrowSelectorClass
+        );
+
+      for (var i = 0; i < priceSwitches.length; i++) {
+        priceSwitches[i].addEventListener(
+          "click",
+          function (e) {
+            e.preventDefault();
+
+            self.flickSwitch();
+
+            self.showPayroll();
+
+            self.changePrice();
+
+            self.store.switchState = !self.store.switchState;
+          },
+          false
+        );
+      }
+
+      for (var i = 0; i < productSelectors.length; i++) {
+        productSelectors[i].addEventListener(
+          "click",
+          function (e) {
+            e.preventDefault();
+
+            self.chartSelector(e.target);
+
+            self.arrowSelection(e.target);
+
+            self.slideSections();
+          },
+          true
+        );
+      }
+
+      for (var i = 0; i < arrowSelectors.length; i++) {
+        arrowSelectors[i].addEventListener(
+          "click",
+          function (e) {
+            self.chartSelector(e.target);
+
+            self.arrowSelection(e.target);
+
+            self.slideSections();
+
+            console.log("Click");
+          },
+          false
+        );
+      }
+
+      self.stickyHeader();
+    },
+
+    init: function (settings) {
+      console.log("[Custom Pricing Chart] initialized...");
+
+      settings = settings || {};
+
+      this.settings = Object.assign({}, this._settings, settings);
+
+      this.events();
+    }
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    customChart.init();
+  });
+</script>
+<!-- END COPY HERE  -->
